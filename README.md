@@ -46,7 +46,7 @@ You will need to have Cheat Engine installed to use this.
 1. Start the game.
 2. Start up Cheat Engine.
 3. Go to File and Open Process, and select the Path of Exile process from the list.
-4. Go to File and Open File, and open the .CT file you downloaded from here.
+4. Go to File and Load, and open the .CT file you downloaded from here.
 5. *Optional: If you're using a Steam or Kakao client, scroll down the list of check boxes and check the Steam or Kakao box.*
 6. Check the boxes for the features you want to enable.
 
