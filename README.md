@@ -1,6 +1,6 @@
 ## poe-ce: Maphack, zoomhack, and more
 
-### [Click here to download the latest version](https://github.com/m4p3r/poe-ce/raw/master/ct/maper_CE_3.10.2c.zip)
+### [Click here to download the latest version](https://github.com/m4p3r/poe-ce/raw/master/ct/maper_CE_3.11.0.zip)
 
 #### [Click here for support](https://www.ownedcore.com/forums/showthread.php?p=4216273)
 
