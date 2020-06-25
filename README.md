@@ -1,25 +1,28 @@
 ## poe-ce: Maphack, zoomhack, and more
 
-### [Click here to download the latest version](https://github.com/m4p3r/poe-ce/raw/master/ct/maper_CE_3.11.0.zip)
+### [Click here to download the latest version](https://github.com/m4p3r/poe-ce/raw/master/ct/maper_CE_3.11.0f.zip)
 
 #### [Click here for support](https://www.ownedcore.com/forums/showthread.php?p=4216273)
 
 #### Overview
 
-This is a simple Cheat Engine table to reveal the entire map, increase the maximum camera zoom, as well as a few other quality of life features for Path of Exile. It's designed to be lightweight and easy to use.
+This is a collection of quality of life features for Path of Exile. It's designed to be lightweight and easy to use.
 
 
 #### Features
 
-* Full map revealed on area load.
-* Unlimited zoom range with the mouse wheel.
-* Unlimited zoom range with the keyboard.
-* Option to always show enemy health bars.
-* Option to disable light radius and brighten the environment.
-* Option to disable ambient fog.
-* Option to disable far plane culling.
-* **Works with Steam, Kakao and standalone clients.**
-* **64-bit client only.**
+* Maphack
+ * Reveals the entire minimap.
+ * Option to "ghostwalk", or prevent the game from saving your map reveal progress.
+ * Option to reset reveal progress on the map.
+* Zoomhack
+ * Unlimited zoom range with the mouse wheel.
+ * Unlimited zoom range with the keyboard.
+ * Option to disable distance fog.
+ * Option to disable far plane culling.
+* Always show enemy health bars.
+* Increase player lighting in dark areas.
+* **Only tested with the 64-bit standalone client - not Steam, etc.**
 
 
 #### Disclaimer
@@ -47,7 +50,6 @@ You will need to have Cheat Engine installed to use this.
 2. Start up Cheat Engine.
 3. Go to File and Open Process, and select the Path of Exile process from the list.
 4. Go to File and Load, and open the .CT file you downloaded from here.
-5. *Optional: If you're using a Steam or Kakao client, scroll down the list of check boxes and check the Steam or Kakao box.*
 6. Check the boxes for the features you want to enable.
 
 
