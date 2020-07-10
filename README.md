@@ -12,14 +12,14 @@ This is a collection of quality of life features for Path of Exile. It's designe
 #### Features
 
 * Maphack
- * Reveals the entire minimap.
- * Option to "ghostwalk", or prevent the game from saving your map reveal progress.
- * Option to reset reveal progress on the map.
+    - Reveals the entire minimap.
+    - Option to "ghostwalk", or prevent the game from saving your map reveal progress.
+    - Option to reset reveal progress on the map.
 * Zoomhack
- * Unlimited zoom range with the mouse wheel.
- * Unlimited zoom range with the keyboard.
- * Option to disable distance fog.
- * Option to disable far plane culling.
+    - Unlimited zoom range with the mouse wheel.
+    - Unlimited zoom range with the keyboard.
+    - Option to disable distance fog.
+    - Option to disable far plane culling.
 * Always show enemy health bars.
 * Increase player lighting in dark areas.
 * **Only tested with the 64-bit standalone client - not Steam, etc.**
