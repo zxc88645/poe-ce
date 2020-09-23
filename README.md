@@ -33,11 +33,7 @@ Cheating is bad. Using this is against the game's terms of use. This is currentl
 
 #### Donate
 
-BTC: `38UyzsixuhgJRrUjuFjETMt6NkwLfPocWu`
-
-BCH: `qpjhtdsf7aj9ygq2lkscg2zwdn8rwwt89chhgdmht5`
-
-ETH: `0x2002b594433549d33eB594B8e590904164A46253`
+BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`
 
 
 #### Requirements
@@ -85,3 +81,4 @@ The following people originally wrote some of these features or gave me helpful 
 * zaafar
 * ankorman
 * TehCheat
+* m4p3r
