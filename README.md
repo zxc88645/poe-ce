@@ -5,7 +5,7 @@
 
 #### [Click here for support](https://www.ownedcore.com/forums/showthread.php?p=421627OR)
 
-or my [PM] (https://www.ownedcore.com/forums/private.php?do=newpm&u=1146469)
+or my [PM](https://www.ownedcore.com/forums/private.php?do=newpm&u=1146469)
 
 #### Overview
 
