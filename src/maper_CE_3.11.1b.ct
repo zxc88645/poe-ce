@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Always Show Enemy Health Bars [Shift + F8]"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Always Show Enemy Health Bars
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(AlwaysShowHealthBars, PathOfExile_x64.exe, 7C ?? 44 8B 82 ?? ?? 00 00 8B 82 ?? ?? 00 00 41 0F AF C0)
+registersymbol(AlwaysShowHealthBars)
+AlwaysShowHealthBars:
+   db EB
+ 
+[DISABLE]
+AlwaysShowHealthBars:
+   db 7C
+unregistersymbol(AlwaysShowHealthBars)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>16</Key>
+            <Key>119</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Increase Player Light [Shift + F7]"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Increase Player Light
+
+   Options:
+     Height: New light height above player.
+     Intensity: Brightness of the new light.
+     FrontDistance: New light offset distance from the front of the player.
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(IncreasePlayerLightAob, PathOfExile_x64.exe, 49 8B CA F3 0F 5C 0D ?? ?? ?? ?? F3 41 0F 10 50)
+define(IncreasePlayerLight, IncreasePlayerLightAob)
+define(IncreasePlayerLightReturn, IncreasePlayerLightAob+26)
+alloc(IncreasePlayerLightOriginal, $5)
+alloc(Handler, $1000, IncreasePlayerLight)
+registersymbol(IncreasePlayerLight)
+registersymbol(IncreasePlayerLightOriginal)
+registersymbol(IncreasePlayerLightReturn)
+IncreasePlayerLightOriginal:
+   readmem(IncreasePlayerLight, 5)
+Handler:
+   mov rcx, r10
+   subss xmm1,[Height]
+   movss xmm2,[r8+30]
+   addss xmm2,[r9]
+   subss xmm0,[FrontDistance]
+   mulss xmm4,[Intensity]
+   jmp IncreasePlayerLightReturn
+Height:
+   dd (float)1000.0
+Intensity:
+   dd (float)20000.0
+FrontDistance:
+   dd (float)83.50
+
+IncreasePlayerLight:
+   jmp Handler
+
+[DISABLE]
+IncreasePlayerLight:
+   readmem(IncreasePlayerLightOriginal, 5)
+unregistersymbol(IncreasePlayerLight)
+unregistersymbol(IncreasePlayerLightOriginal)
+unregistersymbol(IncreasePlayerLightReturn)
+dealloc(IncreasePlayerLightOriginal)
+dealloc(Handler)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>16</Key>
+            <Key>118</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Maphack [Shift + F6]"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Maphack
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(MaphackRevealAob, PathOfExile_x64.exe, 66 C7 ?? 78 00 00 C6 ?? 7A 00)
+define(MaphackReveal, MaphackRevealAob+05)
+registersymbol(MaphackReveal)
+MaphackReveal:
+   db 01
+
+[DISABLE]
+MaphackReveal:
+   db 00
+unregistersymbol(MaphackReveal)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>16</Key>
+            <Key>117</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"(optional) Ghostwalking [Shift + F5]"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Maphack Ghostwalking
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(MaphackVisitAob, PathOfExile_x64.exe, 4C 8B 86 ?? ?? ?? ?? 48 8B 96 ?? ?? ?? ?? E8 ?? ?? ?? ?? 33)
+define(MaphackVisit, MaphackVisitAob+0E)
+alloc(MaphackVisitOriginal, $5)
+registersymbol(MaphackVisit)
+registersymbol(MaphackVisitOriginal)
+MaphackVisitOriginal:
+   readmem(MaphackVisit, 5)
+MaphackVisit:
+   db EB 03
+
+[DISABLE]
+MaphackVisit:
+   readmem(MaphackVisitOriginal, 5)
+dealloc(MaphackVisitOriginal)
+unregistersymbol(MaphackVisit)
+unregistersymbol(MaphackVisitOriginal)
+</AssemblerScript>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>16</Key>
+                <Key>116</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"(optional) Reset Map"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Maphack Reset
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(MaphackResetAob, PathOfExile_x64.exe, 48 83 BE C0 04 00 00 00 74)
+define(MaphackReset, MaphackResetAob+08)
+registersymbol(MaphackReset)
+MaphackReset:
+   db EB
+
+[DISABLE]
+MaphackReset:
+   db 74
+unregistersymbol(MaphackReset)
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"Zoomhack"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Zoomhack
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(ZoomhackKeyDownAob, PathOfExile_x64.exe, C7 83 ?? ?? 00 00 00 00 80 3F 48 83 C4 20 5F)
+aobscanmodule(ZoomhackKeyUpAob, PathOfExile_x64.exe, 0F 28 D0 F3 0F 10 ?? ?? ?? ?? ?? 0F 2F D8 77 03 0F ?? ?? 48 8B 74)
+aobscanmodule(ZoomhackMouseAob, PathOfExile_x64.exe, 72 ?? F3 0F 10 15 ?? ?? ?? ?? 0F ?? ?? 0F ?? ?? 77)
+define(ZoomhackKeyDown, ZoomhackKeyDownAob+08)
+define(ZoomhackKeyUp, ZoomhackKeyUpAob+0E)
+define(ZoomhackMouse, ZoomhackMouseAob+10)
+registersymbol(ZoomhackKeyDown)
+registersymbol(ZoomhackKeyUp)
+registersymbol(ZoomhackMouse)
+ZoomhackKeyDown:
+   db 7A 44
+ZoomhackKeyUp:
+   nop
+   nop
+ZoomhackMouse:
+   nop
+   nop
+
+[DISABLE]
+ZoomhackKeyDown:
+   db 80 3F
+ZoomhackKeyUp:
+   db 77 03
+ZoomhackMouse:
+   db 77 03
+unregistersymbol(ZoomhackKeyDown)
+unregistersymbol(ZoomhackKeyUp)
+unregistersymbol(ZoomhackMouse)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"(optional) Disable Far Plane Culling"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Disable Far Plane Culling
+
+   Options:
+     NewFarPlane: New culling distance, you can adjust it if you find it
+     impacts your performance.
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(DisableFarPlaneCulling, PathOfExile_x64.exe, F3 0F 11 89 40 03 00 00)
+alloc(DisableFarPlaneCullingOriginal, $16)
+registersymbol(DisableFarPlaneCulling)
+registersymbol(DisableFarPlaneCullingOriginal)
+DisableFarPlaneCullingOriginal:
+   readmem(DisableFarPlaneCulling, 16)
+alloc(Handler, $1000, DisableFarPlaneCulling)
+Handler:
+   movss [rcx+00000340],xmm1
+   movss xmm2,[NewFarPlane]
+   movss [rcx+00000344],xmm2
+   jmp Return
+NewFarPlane:
+   dd (float)20000.0
+DisableFarPlaneCulling:
+   jmp Handler
+   db 90 90 90 90 90 90 90 90 90 90 90
+Return:
+
+[DISABLE]
+DisableFarPlaneCulling:
+   readmem(DisableFarPlaneCullingOriginal, 16)
+dealloc(DisableFarPlaneCullingOriginal)
+dealloc(Handler)
+unregistersymbol(DisableFarPlaneCulling)
+unregistersymbol(DisableFarPlaneCullingOriginal)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"(optional) Disable Distance Fog"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Disable Fog Render
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(DisableFogRender, PathOfExile_x64.exe, 44 0F B6 47 08 FF 50 38)
+registersymbol(DisableFogRender)
+alloc(DisableFogRenderOriginal, $5)
+registersymbol(DisableFogRenderOriginal)
+DisableFogRenderOriginal:
+   readmem(DisableFogRender, 5)
+alloc(Handler, $1000, DisableFogRender)
+Handler:
+   cmp rsi,1000
+   ja HandlerAllow
+   xor r8,r8
+   mov byte ptr [rdi+08],0
+HandlerAllow:
+   jmp Return
+DisableFogRender:
+   jmp Handler
+Return:
+
+[DISABLE]
+DisableFogRender:
+   readmem(DisableFogRenderOriginal, 5)
+dealloc(DisableFogRenderOriginal)
+dealloc(Handler)
+unregistersymbol(DisableFogRender)
+unregistersymbol(DisableFogRenderOriginal)
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"Other Client Support (check one of these if you use them)"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"Steam"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+If you're using the Steam client you must enable this.
+*/
+
+[ENABLE]
+label(PathOfExile_x64.exe)
+registersymbol(PathOfExile_x64.exe)
+PathOfExile_x64Steam.exe:
+PathOfExile_x64.exe:
+
+[DISABLE]
+unregistersymbol(PathOfExile_x64.exe)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"Kakao"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+If you're using the Kakao client you must enable this.
+*/
+
+[ENABLE]
+label(PathOfExile_x64.exe)
+registersymbol(PathOfExile_x64.exe)
+PathOfExile_x64_KG.exe:
+PathOfExile_x64.exe:
+
+[DISABLE]
+unregistersymbol(PathOfExile_x64.exe)
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>

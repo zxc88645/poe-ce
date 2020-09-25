@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>5</ID>
       <Description>"Increase Player Light [Shift + F7 ] (高亮)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Increase Player Light
@@ -96,7 +96,7 @@ dealloc(Handler)
     <CheatEntry>
       <ID>2</ID>
       <Description>"Always Show Enemy Health Bars [Shift + F8] (總是顯示血條)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Always Show Enemy Health Bars
@@ -131,7 +131,7 @@ unregistersymbol(AlwaysShowHealthBars)
     <CheatEntry>
       <ID>6</ID>
       <Description>"Maphack [Shift + F6] (地圖全開)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Maphack
@@ -167,7 +167,7 @@ unregistersymbol(MaphackReveal)
         <CheatEntry>
           <ID>11</ID>
           <Description>"(optional) Ghostwalking [Shift + F5] (不保存走過的路)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Maphack Ghostwalking
@@ -250,7 +250,7 @@ dealloc(newmem)
         <CheatEntry>
           <ID>12</ID>
           <Description>"(optional) Reset Map (重置地圖)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Maphack Reset
@@ -313,7 +313,7 @@ unregistersymbol(MaphackReset)
     <CheatEntry>
       <ID>7</ID>
       <Description>"Zoomhack (視野)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Zoomhack
@@ -357,7 +357,7 @@ unregistersymbol(ZoomhackMouse)
         <CheatEntry>
           <ID>3</ID>
           <Description>"(optional) Disable Far Plane Culling (禁用地圖遮罩)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Disable Far Plane Culling
@@ -409,7 +409,7 @@ unregistersymbol(DisableFarPlaneCullingOriginal)
         <CheatEntry>
           <ID>4</ID>
           <Description>"(optional) Disable Distance Fog (禁用迷霧)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Disable Fog Render
@@ -487,35 +487,7 @@ dealloc(change)
 "PathOfExile_x64.exe"+14D115A: 48 8B 74 24 58        -  mov rsi,[rsp+58]
 "PathOfExile_x64.exe"+14D115F: 48 83 C4 40           -  add rsp,40
 "PathOfExile_x64.exe"+14D1163: 5F                    -  pop rdi
-PathOfExile_x64.exe+14D1444 - C3                    - ret
-PathOfExile_x64.exe+14D1445 - 48 8D 15 7C498A01     - lea rdx,[PathOfExile_x64.exe+2D75DC8]
-PathOfExile_x64.exe+14D144C - 48 8D 4C 24 20        - lea rcx,[rsp+20]
-PathOfExile_x64.exe+14D1451 - E8 EA6FCDFE           - call PathOfExile_x64.exe+1A8440
-PathOfExile_x64.exe+14D1456 - 48 8D 15 CB3FEA01     - lea rdx,[PathOfExile_x64.exe+3375428]
-PathOfExile_x64.exe+14D145D - 48 8D 4C 24 20        - lea rcx,[rsp+20]
-PathOfExile_x64.exe+14D1462 - E8 C1ED7700           - call PathOfExile_x64.exe+1C50228
-PathOfExile_x64.exe+14D1467 - CC                    - int 3
-PathOfExile_x64.exe+14D1468 - CC                    - int 3
-PathOfExile_x64.exe+14D1469 - CC                    - int 3
-PathOfExile_x64.exe+14D146A - CC                    - int 3
-PathOfExile_x64.exe+14D146B - CC                    - int 3
-PathOfExile_x64.exe+14D146C - CC                    - int 3
-PathOfExile_x64.exe+14D146D - CC                    - int 3
-PathOfExile_x64.exe+14D146E - CC                    - int 3
-PathOfExile_x64.exe+14D146F - CC                    - int 3
-PathOfExile_x64.exe+14D1470 - 48 89 5C 24 08        - mov [rsp+08],rbx
-PathOfExile_x64.exe+14D1475 - 48 89 74 24 10        - mov [rsp+10],rsi
-PathOfExile_x64.exe+14D147A - 57                    - push rdi
-PathOfExile_x64.exe+14D147B - 48 83 EC 40           - sub rsp,40
-PathOfExile_x64.exe+14D147F - 48 8B 99 70020000     - mov rbx,[rcx+00000270]
-PathOfExile_x64.exe+14D1486 - 48 8B FA              - mov rdi,rdx
-PathOfExile_x64.exe+14D1489 - 48 8B B1 78020000     - mov rsi,[rcx+00000278]
-PathOfExile_x64.exe+14D1490 - 48 3B DE              - cmp rbx,rsi
-PathOfExile_x64.exe+14D1493 - 74 45                 - je PathOfExile_x64.exe+14D14DA
-PathOfExile_x64.exe+14D1495 - 0FB6 43 04            - movzx eax,byte ptr [rbx+04]
-PathOfExile_x64.exe+14D1499 - 3C 01                 - cmp al,01
-PathOfExile_x64.exe+14D149B - 74 23                 - je PathOfExile_x64.exe+14D14C0
-PathOfExile_x64.exe+14D149D - 76 4B                 - jna PathOfExile_x64.exe+14D14EA
+"PathOfExile_x64.exe"+14D1164: C3                    -  ret
 }
 </AssemblerScript>
         </CheatEntry>
