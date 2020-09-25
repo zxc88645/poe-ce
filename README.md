@@ -3,7 +3,7 @@
 
 ### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.2.zip)
 
-#### [Click here for support](https://www.ownedcore.com/forums/showthread.php?p=421627OR)
+#### [Click here for support](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
 
 or my [PM](https://www.ownedcore.com/forums/private.php?do=newpm&u=1146469)
 
