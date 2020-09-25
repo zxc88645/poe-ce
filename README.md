@@ -3,7 +3,9 @@
 
 ### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.1.zip)
 
-#### [Click here for support](https://www.ownedcore.com/forums/showthread.php?p=4216273)
+#### [Click here for support](https://www.ownedcore.com/forums/showthread.php?p=421627OR)
+
+or my [PM](https://www.ownedcore.com/forums/private.php?do=newpm&u=1146469)
 
 #### Overview
 
@@ -33,11 +35,7 @@ Cheating is bad. Using this is against the game's terms of use. This is currentl
 
 #### Donate
 
-BTC: `38UyzsixuhgJRrUjuFjETMt6NkwLfPocWu`
-
-BCH: `qpjhtdsf7aj9ygq2lkscg2zwdn8rwwt89chhgdmht5`
-
-ETH: `0x2002b594433549d33eB594B8e590904164A46253`
+BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`
 
 
 #### Requirements
@@ -85,3 +83,4 @@ The following people originally wrote some of these features or gave me helpful 
 * zaafar
 * ankorman
 * TehCheat
+* m4p3r
