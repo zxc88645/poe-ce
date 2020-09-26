@@ -49,8 +49,8 @@ You will need to have [Cheat Engine](https://cheatengine.org) installed to use t
 
 1. Start the game.
 2. Start up Cheat Engine.
-3. Go to File and Open Process, and select the Path of Exile process from the list.
-4. Go to File and Load, and open the .CT file you downloaded from here.
+3. Go to "File" and "Open Process" , and select the Path of Exile process from the list.
+4. Go to "File" and "Load ", and open the .CT file you downloaded from here.
 5. *Optional: If you're using a Steam or Kakao client, scroll down the list of check boxes and check the Steam or Kakao box.*
 6. Check the boxes for the features you want to enable.
 
@@ -66,12 +66,25 @@ You will need to have [Cheat Engine](https://cheatengine.org) installed to use t
 
 ##### Preserving your actual exploration while using maphack
 
-Normally when you enable maphack, the map will be permanently explored and you won't be able to see what areas you've actually explored. You can use ghostwalking before you enable maphack to prevent maphack from permanently revealing the map. Press **Shift + F5** to enable ghostwalk, then **Shift + F6** to enable maphack. When you have an idea of the map layout you can press **Shift + F6** to disable maphack and **Shift + F5** to disable ghostwalk. Then your map exploration will be back to normal. Rinse and repeat when you want to check the full map again. As long as ghostwalking is enabled when you enable maphack, you won't lose your exploration progress. Keep in mind that any exploration you do while ghostwalking is enabled will not be saved.
+Normally when you enable maphack, the map will be permanently explored and you won't be able to see what areas you've actually explored. 
+
+You can use ghostwalking before you enable maphack to prevent maphack from permanently revealing the map. Press Shift + F5 to enable ghostwalk, then Shift + F6 to enable maphack. 
+
+When you have an idea of the map layout you can press Shift + F6 to disable maphack and Shift + F5 to disable ghostwalk. 
+
+Then your map exploration will be back to normal. Rinse and repeat when you want to check the full map again. 
+
+As long as ghostwalking is enabled when you enable maphack, you won't lose your exploration progress. 
+
+Keep in mind that any exploration you do while ghostwalking is enabled will not be saved.
 
 ##### Accidentally revealed the whole map with ghostwalking disabled
 
-Sometimes you might accidentally load into an area and enable maphack without ghostwalking enabled. If you do this and you didn't want to permanently reveal the map, you can enable the reset map option under maphack and then disable it again. This will reset all exploration progress on the current map.
+Sometimes you might accidentally load into an area and enable maphack without ghostwalking enabled.
 
+ If you do this and you didn't want to permanently reveal the map, you can enable the reset map option under maphack and then disable it again. 
+
+This will reset all exploration progress on the current map.
 
 #### Configuring
 
