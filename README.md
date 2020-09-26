@@ -5,8 +5,6 @@
 
 #### [Click here for support](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
 
-or my [PM](https://www.ownedcore.com/forums/private.php?do=newpm&u=1146469)
-
 #### Overview
 
 This is a collection of quality of life features for Path of Exile. It's designed to be lightweight and easy to use.
@@ -34,6 +32,10 @@ Cheating is bad. Using this is against the game's terms of use. This is currentl
 
 
 #### Donate
+
+If you can,
+Let me have a cup of coffee while developing,
+I will thank you very much.
 
 BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`
 
