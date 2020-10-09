@@ -1,7 +1,7 @@
 
 # poe-ce: Maphack, zoomhack, Light, and more
 
-### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.2.zip)
+### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.3C.zip)
 
 #### [Click here for support](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
 
@@ -36,12 +36,11 @@
 
 ## Donate
 
-  If you can,  
-  Let me have a cup of coffee while developing,  
-  I will thank you very much.  
+  If u can, Let me have a cup of coffee while developing,  
   
   BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`
 
+  My appreciation is beyond expression.
 
 ## Requirements
 
@@ -79,7 +78,7 @@
   As long as ghostwalking is enabled when you enable maphack, you won't lose your exploration progress.  
   Keep in mind that any exploration you do while ghostwalking is enabled will not be saved.  
     
-## Accidentally revealed the whole map with ghostwalking disabled
+### Accidentally revealed the whole map with ghostwalking disabled
   
   Sometimes you might accidentally load into an area and enable maphack without ghostwalking enabled.  
   If you do this and you didn't want to permanently reveal the map, you can enable the reset map option under maphack and then disable it again.  

@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>5</ID>
       <Description>"Increase Player Light [Shift + F7 ] (高亮)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Increase Player Light
@@ -96,7 +96,7 @@ dealloc(Handler)
     <CheatEntry>
       <ID>2</ID>
       <Description>"Always Show Enemy Health Bars [Shift + F8] (總是顯示血條)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Always Show Enemy Health Bars
@@ -131,7 +131,7 @@ unregistersymbol(AlwaysShowHealthBars)
     <CheatEntry>
       <ID>6</ID>
       <Description>"Maphack [Shift + F6] (地圖全開)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Maphack
@@ -167,7 +167,7 @@ unregistersymbol(MaphackReveal)
         <CheatEntry>
           <ID>11</ID>
           <Description>"(optional) Ghostwalking [Shift + F5] (不保存走過的路)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Maphack Ghostwalking
@@ -250,7 +250,7 @@ dealloc(newmem)
         <CheatEntry>
           <ID>12</ID>
           <Description>"(optional) Reset Map (重置地圖)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Maphack Reset
@@ -313,7 +313,7 @@ unregistersymbol(MaphackReset)
     <CheatEntry>
       <ID>7</ID>
       <Description>"Zoomhack (視野)"</Description>
-      <LastState Activated="1"/>
+      <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>/*
    Zoomhack
@@ -357,7 +357,7 @@ unregistersymbol(ZoomhackMouse)
         <CheatEntry>
           <ID>3</ID>
           <Description>"(optional) Disable Far Plane Culling (禁用地圖遮罩)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Disable Far Plane Culling
@@ -409,7 +409,7 @@ unregistersymbol(DisableFarPlaneCullingOriginal)
         <CheatEntry>
           <ID>4</ID>
           <Description>"(optional) Disable Distance Fog (禁用迷霧)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
    Disable Fog Render
@@ -441,8 +441,14 @@ newmem:
   ja change
   cmp r8,0
   je change
+  cmp r8,10
+  je change
+  //cmp r8,4 //error
+  //je change
+  nop
 
 code:
+
   cmp [rax],cl
   mov eax,[rbx+10]
   jmp return
