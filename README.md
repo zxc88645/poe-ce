@@ -3,7 +3,7 @@
 
 ### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.3C.zip)
 
-#### [Click here for support](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
+#### [Click here for support ( Ownedcore )](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
 
 ## Overview
 
@@ -56,6 +56,7 @@
   5. *Optional: If you're using a Steam or Kakao client, scroll down the list of check boxes and check the Steam or Kakao box.*
   6. Check the boxes for the features you want to enable.
 
+  ![WEBP Error](DynamicQuickStart.webp "Quick Start")
 
 ## Hotkeys
 
@@ -70,17 +71,21 @@
 ### Preserving your actual exploration while using maphack
       
   Normally when you enable maphack, the map will be permanently explored and you won't be able to see what areas you've actually explored.  
+
   You can use ghostwalking before you enable maphack to prevent maphack from permanently revealing the map. Press Shift + F5 to enable ghostwalk, then Shift + F6 to enable maphack.  
   
   When you have an idea of the map layout you can press Shift + F6 to disable maphack and Shift + F5 to disable ghostwalk.  
+
   Then your map exploration will be back to normal. Rinse and repeat when you want to check the full map again.  
   
   As long as ghostwalking is enabled when you enable maphack, you won't lose your exploration progress.  
+
   Keep in mind that any exploration you do while ghostwalking is enabled will not be saved.  
     
 ### Accidentally revealed the whole map with ghostwalking disabled
   
   Sometimes you might accidentally load into an area and enable maphack without ghostwalking enabled.  
+
   If you do this and you didn't want to permanently reveal the map, you can enable the reset map option under maphack and then disable it again.  
   
   This will reset all exploration progress on the current map.  
@@ -89,6 +94,7 @@
 ## Configuring
   
   You can change the configuration of some of the features by right-clicking on it in the list, and selecting Change Script.  
+
   If the feature can be configured, how to do so will be described in the comments of that script.  
 
 
