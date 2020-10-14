@@ -1,7 +1,10 @@
 
 # poe-ce: Maphack, zoomhack, Light, and more
 
-### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.3C.zip)
+
+![](https://img.shields.io/badge/Maphack-3.12.4-brightgreen)
+
+### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.4.zip)
 
 #### [Click here for support ( Ownedcore )](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
 
@@ -11,12 +14,17 @@
 
 
 ## Features
+  * Custom resolution (自訂解析度)
+	  - X resolution Width (default: 800)
+	  - Y resolution Height (default: 600)
+      * **If X and Y = -1, Get Black screen**
+      * **Double click "Script" to change**
 
-  * Maphack
+  * Maphack (地圖全開)
       - Reveals the entire minimap.
       - Option to "ghostwalk", or prevent the game from saving your map reveal progress.
       - Option to reset reveal progress on the map.
-  * Zoomhack
+  * Zoomhack (無限視野)
       - Unlimited zoom range with the mouse wheel.
       - Unlimited zoom range with the keyboard.
       - Option to disable distance fog.
@@ -24,7 +32,7 @@
 * Always show enemy health bars.
 * Increase player lighting in dark areas.
 * **Only tested with the 64-bit standalone client. It may work for Steam and Kakao but these are rarely tested so support is never guaranteed.**
-
+* **我來自台灣所以 Garena (TW) 通常可以用(I'm from Taiwan so Garena (TW) can usually be used)**  
 
 ## Disclaimer
 
