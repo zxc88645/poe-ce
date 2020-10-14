@@ -18,7 +18,7 @@
 	  - X resolution Width (default: 800)
 	  - Y resolution Height (default: 600)
       * **If X and Y = -1, Get Black screen**
-      * **Double click "Script" to change**
+      * **Double click "Value" to change**
 
   * Maphack (地圖全開)
       - Reveals the entire minimap.

@@ -20,18 +20,25 @@
 }
 
 [ENABLE]
-define(X,(float)800)    //Change me (-1 = Black screen (黑屏))
-define(Y,(float)600)    //Change me (-1 = Black screen (黑屏))
+
+
 
 
 aobscanmodule(EnableResolution,PathOfExile_x64.exe,80 79 04 00 4C 8D 1D B5 66 B1 FE) // should be unique
 aobscanmodule(CustomResolution,PathOfExile_x64.exe,F3 41 0F 11 48 20 F3) // should be unique
 alloc(newmem,$1000,"PathOfExile_x64.exe"+14E9A25)
-registersymbol(CustomResolution)
-registersymbol(EnableResolution)
-
+label(CustomResolutionX)
+label(CustomResolutionY)
 label(code)
 label(return)
+
+
+registersymbol(CustomResolution)
+registersymbol(EnableResolution)
+registersymbol(CustomResolutionX)
+registersymbol(CustomResolutionY)
+
+define(CustomResolutionXx,(float)CustomResolutionX)
 
 
 EnableResolution:
@@ -39,12 +46,31 @@ EnableResolution:
 
 newmem:
 code:
-  mov [r8+20],X
+
+  sub rsp,10
+  movdqu dqword [rsp],xmm1
+
+
+  movss xmm1,[CustomResolutionX]
+  movss [r8+20],xmm1
+
   maxss xmm3,xmm0
   minss xmm3,xmm2
-  mov [r8+24],Y
+
+  movss xmm1,[CustomResolutionY]
+  movss [r8+24],xmm1
+
+  movdqu xmm1,dqword [rsp]
+  add rsp,10
 
   jmp return+E
+
+CustomResolutionX:
+  dd (float)800.0
+
+CustomResolutionY:
+  dd (float)600.0
+
 
 CustomResolution:
   jmp newmem
@@ -62,6 +88,8 @@ CustomResolution:
 
 unregistersymbol(EnableResolution)
 unregistersymbol(CustomResolution)
+unregistersymbol(CustomResolutionX)
+unregistersymbol(CustomResolutionY)
 dealloc(newmem)
 
 {
@@ -92,6 +120,20 @@ dealloc(newmem)
 "PathOfExile_x64.exe"+14E9A4E: B8 1F 85 EB 51                 -  mov eax,51EB851F
 }
 </AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"X (Change me)"</Description>
+          <VariableType>Float</VariableType>
+          <Address>CustomResolutionX</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"Y (Change me)"</Description>
+          <VariableType>Float</VariableType>
+          <Address>CustomResolutionY</Address>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
     <CheatEntry>
       <ID>5</ID>
