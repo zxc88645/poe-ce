@@ -1,12 +1,12 @@
 
-# poe-ce: Maphack, zoomhack, Light, and more
+# poe-ce: Maphack, zoomhack, Light, and more  
 
 
-![](https://img.shields.io/badge/Maphack-3.12.4-brightgreen)
+![](https://img.shields.io/badge/Maphack-3.12.4-brightgreen)  
 
-### [Click here to download the latest version](https://github.com/zxc88645/poe-ce/raw/master/ct/maper_CE_3.12.4.zip)
+### <a download  href="src/maper_CE_3.12.4.ct">Click here to download the latest version</a>
 
-#### [Click here for support ( Ownedcore )](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)
+#### [Click here for support ( Ownedcore )](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)  
 
 ## Overview
 
