@@ -765,4 +765,15 @@ unregistersymbol(PathOfExile_x64.exe)
   <UserdefinedSymbols/>
   <Comments>Info about this table:
 </Comments>
+  <LuaScript>function poeattach(timer)
+  if getProcessIDFromProcessName("PathOfExile_x64.exe") ~= nil then
+    object_destroy(timer)
+    openProcess("PathOfExile_x64.exe")
+  end
+end
+
+t=createTimer(nil);
+timer_setInterval(t,10)
+timer_onTimer(t,poeattach)
+</LuaScript>
 </CheatTable>
