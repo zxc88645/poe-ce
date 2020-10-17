@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>40</ID>
       <Description>"Custom resolution ( X Y ) (自訂解析度)"</Description>
-      <LastState/>
+      <LastState Activated="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{
    Custom resolution ( X Y ) (自訂解析度)
@@ -24,7 +24,7 @@
 
 
 
-aobscanmodule(EnableResolution,PathOfExile_x64.exe,80 79 04 00 4C 8D 1D B5 66 B1 FE) // should be unique
+aobscanmodule(EnableResolution,PathOfExile_x64.exe,80 79 04 00 4C 8D 1D ?? ?? ?? ?? 4c 63) // should be unique
 aobscanmodule(CustomResolution,PathOfExile_x64.exe,F3 41 0F 11 48 20 F3) // should be unique
 alloc(newmem,$1000,"PathOfExile_x64.exe"+14E9A25)
 label(CustomResolutionX)
@@ -124,12 +124,14 @@ dealloc(newmem)
         <CheatEntry>
           <ID>41</ID>
           <Description>"X (Change me)"</Description>
+          <LastState Value="400" RealAddress="7FF6E9E1003B"/>
           <VariableType>Float</VariableType>
           <Address>CustomResolutionX</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>42</ID>
           <Description>"Y (Change me)"</Description>
+          <LastState Value="300" RealAddress="7FF6E9E1003F"/>
           <VariableType>Float</VariableType>
           <Address>CustomResolutionY</Address>
         </CheatEntry>

@@ -2,6 +2,140 @@
 <CheatTable CheatEngineTableVersion="31">
   <CheatEntries>
     <CheatEntry>
+      <ID>40</ID>
+      <Description>"Custom resolution ( X Y ) (自訂解析度)"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{
+   Custom resolution ( X Y ) (自訂解析度)
+
+   Options:
+     X: X resolution
+     Y: Y resolution
+
+   - Author by: zxc88645
+   - Version: 3.12.4
+   - https://github.com/zxc88645/poe-ce
+
+}
+
+[ENABLE]
+
+
+
+
+aobscanmodule(EnableResolution,PathOfExile_x64.exe,80 79 04 00 4C 8D 1D ?? ?? ?? ?? 4c 63) // should be unique
+aobscanmodule(CustomResolution,PathOfExile_x64.exe,F3 41 0F 11 48 20 F3) // should be unique
+alloc(newmem,$1000,"PathOfExile_x64.exe"+14E9A25)
+label(CustomResolutionX)
+label(CustomResolutionY)
+label(code)
+label(return)
+
+
+registersymbol(CustomResolution)
+registersymbol(EnableResolution)
+registersymbol(CustomResolutionX)
+registersymbol(CustomResolutionY)
+
+define(CustomResolutionXx,(float)CustomResolutionX)
+
+
+EnableResolution:
+  cmp byte ptr [rcx+04],02
+
+newmem:
+code:
+
+  sub rsp,10
+  movdqu dqword [rsp],xmm1
+
+
+  movss xmm1,[CustomResolutionX]
+  movss [r8+20],xmm1
+
+  maxss xmm3,xmm0
+  minss xmm3,xmm2
+
+  movss xmm1,[CustomResolutionY]
+  movss [r8+24],xmm1
+
+  movdqu xmm1,dqword [rsp]
+  add rsp,10
+
+  jmp return+E
+
+CustomResolutionX:
+  dd (float)800.0
+
+CustomResolutionY:
+  dd (float)600.0
+
+
+CustomResolution:
+  jmp newmem
+  nop
+return:
+
+
+[DISABLE]
+
+EnableResolution:
+  db 80 79 04 00
+
+CustomResolution:
+  db F3 41 0F 11 48 20
+
+unregistersymbol(EnableResolution)
+unregistersymbol(CustomResolution)
+unregistersymbol(CustomResolutionX)
+unregistersymbol(CustomResolutionY)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "PathOfExile_x64.exe"+14E9A25
+
+"PathOfExile_x64.exe"+14E99EE: 0F 28 C2                       -  movaps xmm0,xmm2
+"PathOfExile_x64.exe"+14E99F1: F3 41 0F 59 40 10              -  mulss xmm0,[r8+10]
+"PathOfExile_x64.exe"+14E99F7: 0F 28 CB                       -  movaps xmm1,xmm3
+"PathOfExile_x64.exe"+14E99FA: F3 41 0F 59 8C 83 10 5A 3E 03  -  mulss xmm1,[r11+rax*4+033E5A10]
+"PathOfExile_x64.exe"+14E9A04: F3 41 0F 59 9C 83 40 59 3E 03  -  mulss xmm3,[r11+rax*4+033E5940]
+"PathOfExile_x64.exe"+14E9A0E: F3 0F 5F C8                    -  maxss xmm1,xmm0
+"PathOfExile_x64.exe"+14E9A12: F3 0F 5D CA                    -  minss xmm1,xmm2
+"PathOfExile_x64.exe"+14E9A16: F3 41 0F 10 50 1C              -  movss xmm2,[r8+1C]
+"PathOfExile_x64.exe"+14E9A1C: 0F 28 C2                       -  movaps xmm0,xmm2
+"PathOfExile_x64.exe"+14E9A1F: F3 41 0F 59 40 14              -  mulss xmm0,[r8+14]
+// ---------- INJECTING HERE ----------
+"PathOfExile_x64.exe"+14E9A25: F3 41 0F 11 48 20              -  movss [r8+20],xmm1
+// ---------- DONE INJECTING  ----------
+"PathOfExile_x64.exe"+14E9A2B: F3 0F 5F D8                    -  maxss xmm3,xmm0
+"PathOfExile_x64.exe"+14E9A2F: F3 0F 5D DA                    -  minss xmm3,xmm2
+"PathOfExile_x64.exe"+14E9A33: F3 41 0F 11 58 24              -  movss [r8+24],xmm3
+"PathOfExile_x64.exe"+14E9A39: EB 0F                          -  jmp PathOfExile_x64.exe+14E9A4A
+"PathOfExile_x64.exe"+14E9A3B: 8B 49 18                       -  mov ecx,[rcx+18]
+"PathOfExile_x64.exe"+14E9A3E: 41 89 48 20                    -  mov [r8+20],ecx
+"PathOfExile_x64.exe"+14E9A42: 41 8B 48 1C                    -  mov ecx,[r8+1C]
+"PathOfExile_x64.exe"+14E9A46: 41 89 48 24                    -  mov [r8+24],ecx
+"PathOfExile_x64.exe"+14E9A4A: 41 8D 4A 01                    -  lea ecx,[r10+01]
+"PathOfExile_x64.exe"+14E9A4E: B8 1F 85 EB 51                 -  mov eax,51EB851F
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"X (Change me)"</Description>
+          <VariableType>Float</VariableType>
+          <Address>CustomResolutionX</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"Y (Change me)"</Description>
+          <VariableType>Float</VariableType>
+          <Address>CustomResolutionY</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
       <ID>5</ID>
       <Description>"Increase Player Light [Shift + F7 ] (高亮)"</Description>
       <LastState/>
