@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/badge/Maphack-3.12.4-brightgreen)  
 
-### <a download  href="https://raw.githubusercontent.com/zxc88645/poe-ce/master/src/maper_CE_3.12.4.ct">Click here to download the latest version</a>
+### [Click here to Download](https://github.com/zxc88645/poe-ce/releases)
 
 #### [Click here for support ( Ownedcore )](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)  
 
