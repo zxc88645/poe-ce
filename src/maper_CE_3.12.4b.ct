@@ -473,14 +473,12 @@ unregistersymbol(DisableFarPlaneCulling)
 unregistersymbol(DisableFarPlaneCullingOriginal)
 </AssemblerScript>
         </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>4</ID>
-      <Description>"(optional) Disable Distance Fog (禁用迷霧)"</Description>
-      <LastState/>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>/*
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"(optional) Disable Distance Fog (禁用迷霧)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
    Disable Fog Render
 
    - Updated by: zxc88645
@@ -565,6 +563,8 @@ dealloc(change)
 "PathOfExile_x64.exe"+14D1164: C3                    -  ret
 }
 </AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
     <CheatEntry>
       <ID>40</ID>
