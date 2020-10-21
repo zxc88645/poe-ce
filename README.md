@@ -2,7 +2,7 @@
 # poe-ce: Maphack, zoomhack, Light, and more  
 
 
-![](https://img.shields.io/badge/Maphack-3.12.4-brightgreen)  
+![](https://img.shields.io/badge/Maphack-3.12.4b-brightgreen)  
 
 ### [Click here to Download](https://github.com/zxc88645/poe-ce/releases)
 
@@ -53,6 +53,8 @@
 ## Requirements
 
   You will need to have [Cheat Engine](https://cheatengine.org) installed to use this.
+  
+  ![Img Error](img/Uncheck.png "Uncheck")
 
 
 ## Quick Start
@@ -64,7 +66,7 @@
   5. *Optional: If you're using a Steam or Kakao client, scroll down the list of check boxes and check the Steam or Kakao box.*
   6. Check the boxes for the features you want to enable.
 
-  ![WEBP Error](DynamicQuickStart.webp "Quick Start")
+  ![WEBP Error](img/DynamicQuickStart.webp "Quick Start")
 
 ## Hotkeys
 
