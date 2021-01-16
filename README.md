@@ -2,7 +2,7 @@
 # poe-ce: Maphack, zoomhack, Light, and more  
 
 
-![](https://img.shields.io/badge/Maphack-3.12.4b-brightgreen)  
+![](https://img.shields.io/badge/Maphack-3.13.0-brightgreen)  
 
 ### [Click here to Download](https://github.com/zxc88645/poe-ce/releases)
 
@@ -14,12 +14,6 @@
 
 
 ## Features
-  * Custom resolution (自訂解析度)
-	  - X resolution Width (default: 800)
-	  - Y resolution Height (default: 600)
-      * **If X and Y = -1, Get Black screen**
-      * **Double click "Value" to change**
-
   * Maphack (地圖全開)
       - Reveals the entire minimap.
       - Option to "ghostwalk", or prevent the game from saving your map reveal progress.
@@ -46,7 +40,8 @@
 
   If u can, Let me have a cup of coffee while developing,  
   
-  BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`
+  BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`  
+  PayPal: https://paypal.me/zxc88645
 
   My appreciation is beyond expression.
 

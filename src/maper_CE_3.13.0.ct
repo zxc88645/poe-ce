@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"&lt;&lt; Donate &gt;&gt;"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"Let me have a cup of coffee while developing,"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"I will thank you very much."</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53</ID>
+          <Description>"PayPal: https://paypal.me/zxc88645"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"BTC: 3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>54</ID>
+      <Description>"===================="</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Increase Player Light [Shift + F7 ] (高亮)"</Description>
+      <Options moHideChildren="1" moActivateChildrenAsWell="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Increase Player Light
+
+   Options:
+     Height: New light height above player.
+     Intensity: Brightness of the new light.
+     FrontDistance: New light offset distance from the front of the player.
+     other1-2: I'm not sure what this is. Maybe you can try change the number to test.
+     other3: Maybe it is the intensity of the light reflection.
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(IncreasePlayerLightAob, PathOfExile_x64.exe, 48 8d 55 f0 f3 41 0f 58 49 04)
+define(IncreasePlayerLight, IncreasePlayerLightAob)
+define(IncreasePlayerLightReturn, IncreasePlayerLightAob+98)
+alloc(IncreasePlayerLightOriginal, $5)
+alloc(Handler, $1500, IncreasePlayerLight)
+registersymbol(IncreasePlayerLight)
+registersymbol(IncreasePlayerLightOriginal)
+registersymbol(IncreasePlayerLightReturn)
+
+//registersymbol(Height)
+registersymbol(Intensity)
+//registersymbol(FrontDistance)
+//registersymbol(other1)
+//registersymbol(other2)
+//registersymbol(other3)
+//registersymbol(other4)
+//registersymbol(other5)
+//registersymbol(other6)
+//registersymbol(other7)
+
+IncreasePlayerLightOriginal:
+   readmem(IncreasePlayerLight, 5)
+
+Handler:
+lea rdx,[rbp-10]
+addss xmm1,[r9+04]
+mulss xmm4,[Intensity]          //[PathOfExile_x64.exe+1DF3D8C] { (800.00) }
+mov rcx,rbx
+mov qword ptr [rbp-20],00000000 { 0 }
+subss xmm0,[other1]             //[PathOfExile_x64.exe+1DF3460] { (22.50) }
+mov [rbp-18],3F800000      { 1.00 }
+subss xmm1,[FrontDistance]   //[PathOfExile_x64.exe+1DF3670] { (83.50) }
+movaps xmm3,xmm4
+mov [rsp+20],rax
+addss xmm0,[other2]          //[PathOfExile_x64.exe+2515240] { (0.00) }
+addss xmm1,[other3]          //[PathOfExile_x64.exe+251523C] { (0.00) }
+movss [rbp-10],xmm0
+movss xmm0,[rbp+30]
+subss xmm0,[Height]          //[PathOfExile_x64.exe+1DF36D0] { (100.00) }
+movss [rbp-0C],xmm1
+movss xmm1,[rbx+44]
+movss [rbp-2C],xmm1
+addss xmm0,[r8+38]
+lea r8,[rbp-20]
+addss xmm0,[other4]          //[PathOfExile_x64.exe+2515238] { (0.00) }
+movss [rbp-08],xmm0
+movss xmm0,[rbx+40]
+movss [rbp-30],xmm0
+movss xmm0,[rbx+48]
+movss [rbp-28],xmm0
+
+jmp IncreasePlayerLightReturn
+
+Height:
+   dd (float)1000.0
+Intensity:
+   dd (float)20000.0
+FrontDistance:
+   dd (float)83.50
+other1:
+   dd (float)22.50
+other2:	//375F218
+   dd (float)1.00
+other3:
+   dd (float)0.00
+other4:
+   dd (float)0.00
+
+
+
+IncreasePlayerLight:
+   jmp Handler
+
+[DISABLE]
+IncreasePlayerLight:
+   readmem(IncreasePlayerLightOriginal, 5)
+unregistersymbol(IncreasePlayerLight)
+unregistersymbol(IncreasePlayerLightOriginal)
+unregistersymbol(IncreasePlayerLightReturn)
+
+//unregistersymbol(Height)
+unregistersymbol(Intensity)
+//unregistersymbol(FrontDistance)
+//unregistersymbol(other1)
+//unregistersymbol(other2)
+//unregistersymbol(other3)
+//unregistersymbol(other4)
+//unregistersymbol(other5)
+//unregistersymbol(other6)
+//unregistersymbol(other7)
+
+dealloc(IncreasePlayerLightOriginal)
+dealloc(Handler)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>16</Key>
+            <Key>118</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"Intensity (亮度) [ 0 ～9999999]"</Description>
+          <VariableType>Float</VariableType>
+          <Address>Intensity</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Always Show Enemy Health Bars [Shift + F8] (總是顯示血條)"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Always Show Enemy Health Bars
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(AlwaysShowHealthBars, PathOfExile_x64.exe, 7C ?? 44 8B 82 ?? ?? 00 00 8B 82 ?? ?? 00 00 41 0F AF C0)
+registersymbol(AlwaysShowHealthBars)
+AlwaysShowHealthBars:
+   db EB
+ 
+[DISABLE]
+AlwaysShowHealthBars:
+   db 7C
+unregistersymbol(AlwaysShowHealthBars)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>16</Key>
+            <Key>119</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Maphack [Shift + F6] (地圖全開)"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Maphack
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(MaphackRevealAob, PathOfExile_x64.exe, 66 C7 ?? 78 00 00 C6 ?? 7A 00)
+define(MaphackReveal, MaphackRevealAob+05)
+registersymbol(MaphackReveal)
+MaphackReveal:
+   db 01
+
+[DISABLE]
+MaphackReveal:
+   db 00
+unregistersymbol(MaphackReveal)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>16</Key>
+            <Key>117</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"(optional) Ghostwalking [Shift + F5] (不保存走過的路)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Maphack Ghostwalking
+
+   - Updated by: zxc88645
+   - Version: 3.12.0
+   - https://github.com/zxc88645/poe-ce
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+
+aobscanmodule(MaphackVisitCode,PathOfExile_x64.exe,E8 ?? ?? ?? ?? 49 8b 06 48 8b 58 18) // should be unique
+alloc(newmem,$1000,"PathOfExile_x64.exe")
+alloc(MaphackVisitCodeOriginal, $5)
+
+registersymbol(MaphackVisitCodeOriginal)
+
+label(code)
+label(return)
+
+MaphackVisitCodeOriginal:
+   readmem(MaphackVisitCode, 5)
+
+newmem:
+
+code:
+  //call PathOfExile_x64.exe+1532600
+  jmp return
+
+MaphackVisitCode:
+  jmp newmem
+return:
+registersymbol(MaphackVisitCode)
+
+[DISABLE]
+
+MaphackVisitCode:
+  readmem(MaphackVisitCodeOriginal, 5)
+
+unregistersymbol(MaphackVisitCode)
+unregistersymbol(MaphackVisitCodeOriginal)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "PathOfExile_x64.exe"+158E0C3
+
+PathOfExile_x64.exe+1372D98 - F3 0F11 44 24 38      - movss [rsp+38],xmm0
+PathOfExile_x64.exe+1372D9E - C7 44 24 30 03000000  - mov [rsp+30],00000003
+PathOfExile_x64.exe+1372DA6 - 48 8D 85 80020000     - lea rax,[rbp+00000280]
+PathOfExile_x64.exe+1372DAD - 48 89 44 24 20        - mov [rsp+20],rax
+PathOfExile_x64.exe+1372DB2 - 4C 8B 8E A0020000     - mov r9,[rsi+000002A0]
+PathOfExile_x64.exe+1372DB9 - 4C 8B 86 98020000     - mov r8,[rsi+00000298]
+PathOfExile_x64.exe+1372DC0 - 49 8B D6              - mov rdx,r14
+
+PathOfExile_x64.exe+1372DC3 - E8 0845FAFF           - call PathOfExile_x64.exe+13172D0
+
+PathOfExile_x64.exe+1372DC8 - 49 8B 06              - mov rax,[r14]
+PathOfExile_x64.exe+1372DCB - 48 8B 58 18           - mov rbx,[rax+18]
+PathOfExile_x64.exe+1372DCF - 45 33 FF              - xor r15d,r15d
+PathOfExile_x64.exe+1372DD2 - 44 89 BD 80020000     - mov [rbp+00000280],r15d
+PathOfExile_x64.exe+1372DD9 - 48 8B 8E 98020000     - mov rcx,[rsi+00000298]
+PathOfExile_x64.exe+1372DE0 - 48 8B 01              - mov rax,[rcx]
+PathOfExile_x64.exe+1372DE3 - 48 8D 95 88020000     - lea rdx,[rbp+00000288]
+PathOfExile_x64.exe+1372DEA - FF 50 30              - call qword ptr [rax+30]
+PathOfExile_x64.exe+1372DED - 48 8B 00              - mov rax,[rax]
+PathOfExile_x64.exe+1372DF0 - 4C 89 7C 24 40        - mov [rsp+40],r15
+PathOfExile_x64.exe+1372DF5 - 89 44 24 48           - mov [rsp+48],eax
+
+}
+</AssemblerScript>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>16</Key>
+                <Key>116</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"(optional) Reset Map (重置地圖)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Maphack Reset
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(MaphackReset,PathOfExile_x64.exe,73 19 48 8D 0C 89 0F 10 44 24 70 0f 11 44 8d b0) // should be unique
+
+MaphackReset:
+  db EB
+
+registersymbol(MaphackReset)
+
+[DISABLE]
+MaphackReset:
+  db 73
+
+unregistersymbol(MaphackReset)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "PathOfExile_x64.exe"+158E36C
+
+"PathOfExile_x64.exe"+158E340: 48 0F 43 4C 24 50        -  cmovae rcx,[rsp+50]
+"PathOfExile_x64.exe"+158E346: 48 C7 C2 FF FF FF FF     -  mov rdx,FFFFFFFFFFFFFFFF
+"PathOfExile_x64.exe"+158E34D: 0F 1F 00                 -  nop dword ptr [rax]
+"PathOfExile_x64.exe"+158E350: 48 FF C2                 -  inc rdx
+"PathOfExile_x64.exe"+158E353: 80 3C 11 00              -  cmp byte ptr [rcx+rdx],00
+"PathOfExile_x64.exe"+158E357: 75 F7                    -  jne PathOfExile_x64.exe+158E350
+"PathOfExile_x64.exe"+158E359: 45 33 C0                 -  xor r8d,r8d
+"PathOfExile_x64.exe"+158E35C: E8 FF 13 E8 FF           -  call PathOfExile_x64.exe+140F760
+"PathOfExile_x64.exe"+158E361: 48 8B 8D 20 02 00 00     -  mov rcx,[rbp+00000220]
+"PathOfExile_x64.exe"+158E368: 48 83 F9 20              -  cmp rcx,20
+// ---------- INJECTING HERE ----------
+"PathOfExile_x64.exe"+158E36C: 73 19                    -  jae PathOfExile_x64.exe+158E387
+"PathOfExile_x64.exe"+158E36E: 48 8D 0C 89              -  lea rcx,[rcx+rcx*4]
+// ---------- DONE INJECTING  ----------
+"PathOfExile_x64.exe"+158E372: 0F 10 44 24 70           -  movups xmm0,[rsp+70]
+"PathOfExile_x64.exe"+158E377: 0F 11 44 8D A0           -  movups [rbp+rcx*4-60],xmm0
+"PathOfExile_x64.exe"+158E37C: 89 44 8D B0              -  mov [rbp+rcx*4-50],eax
+"PathOfExile_x64.exe"+158E380: 48 FF 85 20 02 00 00     -  inc [rbp+00000220]
+"PathOfExile_x64.exe"+158E387: 48 8D 4C 24 50           -  lea rcx,[rsp+50]
+"PathOfExile_x64.exe"+158E38C: E8 1F BF C1 FE           -  call PathOfExile_x64.exe+1AA2B0
+"PathOfExile_x64.exe"+158E391: 90                       -  nop
+"PathOfExile_x64.exe"+158E392: 48 8D 4C 24 40           -  lea rcx,[rsp+40]
+"PathOfExile_x64.exe"+158E397: E8 84 5B C7 FE           -  call PathOfExile_x64.exe+203F20
+"PathOfExile_x64.exe"+158E39C: 48 8B 9E F8 03 00 00     -  mov rbx,[rsi+000003F8]
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"Zoomhack (視野)"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>/*
+   Zoomhack
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(ZoomhackKeyDownAob, PathOfExile_x64.exe, C7 83 ?? ?? 00 00 00 00 80 3F 48 83 C4 20 5F)
+aobscanmodule(ZoomhackKeyUpAob, PathOfExile_x64.exe, 0F 28 ?? F3 0F 10 05 ?? ?? ?? ?? 0F 2F ?? 77 03 0F 28 ?? 48)
+aobscanmodule(ZoomhackMouseAob, PathOfExile_x64.exe, 72 ?? F3 0F 10 15 ?? ?? ?? ?? 0F ?? ?? 0F ?? ?? 77)
+define(ZoomhackKeyDown, ZoomhackKeyDownAob+08)
+define(ZoomhackKeyUp, ZoomhackKeyUpAob+0E)
+define(ZoomhackMouse, ZoomhackMouseAob+10)
+registersymbol(ZoomhackKeyDown)
+registersymbol(ZoomhackKeyUp)
+registersymbol(ZoomhackMouse)
+ZoomhackKeyDown:
+   db 7A 44
+ZoomhackKeyUp:
+   nop
+   nop
+ZoomhackMouse:
+   nop
+   nop
+
+[DISABLE]
+ZoomhackKeyDown:
+   db 80 3F
+ZoomhackKeyUp:
+   db 77 03
+ZoomhackMouse:
+   db 77 03
+unregistersymbol(ZoomhackKeyDown)
+unregistersymbol(ZoomhackKeyUp)
+unregistersymbol(ZoomhackMouse)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"(optional) Disable Far Plane Culling (禁用地圖遮罩)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Disable Far Plane Culling
+
+   Options:
+     NewFarPlane: New culling distance, you can adjust it if you find it
+     impacts your performance.
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+
+
+*/
+
+[ENABLE]
+aobscanmodule(DisableFarPlaneCulling, PathOfExile_x64.exe, F3 0F 11 89 ?? ?? ?? ?? f3 0f 11 91 ?? ?? ?? ?? e9 ?? ?? ?? ?? cc cc cc cc cc)
+alloc(DisableFarPlaneCullingOriginal, $16)
+registersymbol(DisableFarPlaneCulling)
+registersymbol(DisableFarPlaneCullingOriginal)
+DisableFarPlaneCullingOriginal:
+   readmem(DisableFarPlaneCulling, 16)
+alloc(Handler, $1000, DisableFarPlaneCulling)
+Handler:
+   movss [rcx+000002C0],xmm1
+   movss xmm2,[NewFarPlane]
+   movss [rcx+000002C4],xmm2
+   jmp Return
+NewFarPlane:
+   dd (float)20000.0
+DisableFarPlaneCulling:
+   jmp Handler
+   db 90 90 90 90 90 90 90 90 90 90 90
+Return:
+
+[DISABLE]
+DisableFarPlaneCulling:
+   readmem(DisableFarPlaneCullingOriginal, 16)
+dealloc(DisableFarPlaneCullingOriginal)
+dealloc(Handler)
+unregistersymbol(DisableFarPlaneCulling)
+unregistersymbol(DisableFarPlaneCullingOriginal)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"(optional) Disable Distance Fog (禁用迷霧)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+   Disable Fog Render
+
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce
+*/
+
+[ENABLE]
+aobscanmodule(DisableFogRender,PathOfExile_x64.exe,?? ?? 00 EB 11 48 8B 43 08 33 C9 38 08 8B 43 10)
+alloc(newmem,$1000,"PathOfExile_x64.exe")
+alloc(change,$1000,"PathOfExile_x64.exe")
+alloc(OldDisableFogRender, $4)
+
+FULLACCESS(PathOfExile_x64.exe+1A0F717,4)
+
+registersymbol(OldDisableFogRender)
+registersymbol(DisableFogRender)
+
+label(code)
+label(return)
+
+OldDisableFogRender:
+  readmem(DisableFogRender+0B, 5)
+
+
+change:
+
+
+
+  mov byte ptr [rax],0
+  jmp code
+
+newmem:
+  cmp r8,1000
+  ja change
+  cmp r8,0
+  je change
+  //cmp r8,10
+  //je change  //有些地方會黑掉
+  //cmp r8,4 //error
+  //je change
+  nop
+
+code:
+
+  cmp [rax],cl
+  mov eax,[rbx+10]
+  jmp return
+
+DisableFogRender+0B:
+  jmp newmem
+return:
+
+
+[DISABLE]
+
+DisableFogRender+0B:
+  readmem(OldDisableFogRender, 5)
+
+unregistersymbol(DisableFogRender)
+unregistersymbol(OldDisableFogRender)
+dealloc(OldDisableFogRender)
+dealloc(newmem)
+dealloc(change)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "PathOfExile_x64.exe"+14D1141
+
+"PathOfExile_x64.exe"+14D1122: 3C 07                 -  cmp al,07
+"PathOfExile_x64.exe"+14D1124: 75 3F                 -  jne PathOfExile_x64.exe+14D1165
+"PathOfExile_x64.exe"+14D1126: 8B 4B 10              -  mov ecx,[rbx+10]
+"PathOfExile_x64.exe"+14D1129: 4C 8B 43 18           -  mov r8,[rbx+18]
+"PathOfExile_x64.exe"+14D112D: 48 03 CF              -  add rcx,rdi
+"PathOfExile_x64.exe"+14D1130: 48 8B 53 08           -  mov rdx,[rbx+08]
+"PathOfExile_x64.exe"+14D1134: E8 47 E1 77 00        -  call PathOfExile_x64.exe+1C4F280
+"PathOfExile_x64.exe"+14D1139: EB 11                 -  jmp PathOfExile_x64.exe+14D114C
+"PathOfExile_x64.exe"+14D113B: 48 8B 43 08           -  mov rax,[rbx+08]
+"PathOfExile_x64.exe"+14D113F: 33 C9                 -  xor ecx,ecx
+// ---------- INJECTING HERE ----------
+"PathOfExile_x64.exe"+14D1141: 38 08                 -  cmp [rax],cl
+"PathOfExile_x64.exe"+14D1143: 8B 43 10              -  mov eax,[rbx+10]
+// ---------- DONE INJECTING  ----------
+"PathOfExile_x64.exe"+14D1146: 0F 95 C1              -  setne cl
+"PathOfExile_x64.exe"+14D1149: 89 0C 38              -  mov [rax+rdi],ecx
+"PathOfExile_x64.exe"+14D114C: 48 83 C3 20           -  add rbx,20
+"PathOfExile_x64.exe"+14D1150: 48 3B DE              -  cmp rbx,rsi
+"PathOfExile_x64.exe"+14D1153: 75 BB                 -  jne PathOfExile_x64.exe+14D1110
+"PathOfExile_x64.exe"+14D1155: 48 8B 5C 24 50        -  mov rbx,[rsp+50]
+"PathOfExile_x64.exe"+14D115A: 48 8B 74 24 58        -  mov rsi,[rsp+58]
+"PathOfExile_x64.exe"+14D115F: 48 83 C4 40           -  add rsp,40
+"PathOfExile_x64.exe"+14D1163: 5F                    -  pop rdi
+"PathOfExile_x64.exe"+14D1164: C3                    -  ret
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"Other Client Support (check one of these if you use them)"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"Steam"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+If you're using the Steam client you must enable this.
+*/
+
+[ENABLE]
+label(PathOfExile_x64.exe)
+registersymbol(PathOfExile_x64.exe)
+PathOfExile_x64Steam.exe:
+PathOfExile_x64.exe:
+
+[DISABLE]
+unregistersymbol(PathOfExile_x64.exe)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"Kakao"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>/*
+If you're using the Kakao client you must enable this.
+*/
+
+[ENABLE]
+label(PathOfExile_x64.exe)
+registersymbol(PathOfExile_x64.exe)
+PathOfExile_x64_KG.exe:
+PathOfExile_x64.exe:
+
+[DISABLE]
+unregistersymbol(PathOfExile_x64.exe)
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"===================="</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>" &lt;&lt; Support &gt;&gt;"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>20</ID>
+          <Description>"https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"https://github.com/zxc88645/poe-ce"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+  <LuaScript>function poeattach(timer)
+  if getProcessIDFromProcessName("PathOfExile_x64.exe") ~= nil then
+    object_destroy(timer)
+    openProcess("PathOfExile_x64.exe")
+  end
+end
+
+t=createTimer(nil);
+timer_setInterval(t,10)
+timer_onTimer(t,poeattach)
+</LuaScript>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+43CC7</Address>
+      <Comment>攻擊相關
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+446F2</Address>
+      <Comment>攻擊相關
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1C24EE</Address>
+      <Comment>技能持續2
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1C253D</Address>
+      <Comment>技能持續 結束歸零用
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1C46D8</Address>
+      <Comment>連但結尾吧
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1C576E</Address>
+      <Comment>連但持續找
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1C8FFC</Address>
+      <Comment>技能持續4
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1C900F</Address>
+      <Comment>技能 埔公結束
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1CA8F6</Address>
+      <Comment>取得攻擊速度 
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1CD338</Address>
+      <Comment>特殊技能起頭用
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1CD7E1</Address>
+      <Comment>本人
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1D06FB</Address>
+      <Comment>連但2階段
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+1D077B</Address>
+      <Comment>連但 復職
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+2078A0</Address>
+      <Comment>技能相關
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+2078E5</Address>
+      <Comment>技能相關
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+23F784</Address>
+      <Comment>扣寫
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+7411F1</Address>
+      <Comment>這裡面再傳送各種遊戲資訊
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+74120E</Address>
+      <Comment>扣寫2
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+7479AA</Address>
+      <Comment>必定跳到返回
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"SoulWorker.exe"+747EC8</Address>
+      <Comment>扣寫1
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"Vision.dll"+79055</Address>
+      <Comment>拉到假的位置
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"vScaleformPlugin.vPlugin"+A0737</Address>
+      <Comment>也許
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"vScaleformPlugin.vPlugin"+108AFB</Address>
+      <Comment>畫面震動
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"vScaleformPlugin.vPlugin"+1DA310</Address>
+      <Comment>cd歸零?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"vScaleformPlugin.vPlugin"+1DDB13</Address>
+      <Comment>---
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"vScaleformPlugin.vPlugin"+2B6C47</Address>
+      <Comment>技能持續
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>003E004B</Address>
+      <Comment>補血
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"PathOfExile_x64.exe"+67FF1E</Address>
+      <Comment>1+++++++++
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"PathOfExile_x64.exe"+67FFC1</Address>
+      <Comment>++++++++++2
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
