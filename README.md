@@ -8,6 +8,7 @@
 > Because someone sells this software,  
 > No new version will be released here,  
 > Update has been moved to https://www.patreon.com/user?u=21728455
+> To update 3.13.0.c 
 
 > 由於發生某些人販售此軟體，  
 > 此處不會發布新版本,  
