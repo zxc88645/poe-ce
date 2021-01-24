@@ -5,10 +5,13 @@
 ![](https://img.shields.io/badge/Maphack-3.13.0-brightgreen)  
 
 
+
+
 > Because someone sells this software,  
 > No new version will be released here,  
-> Update has been moved to https://www.patreon.com/user?u=21728455  
-> To update 3.13.0.c 
+> git Version 3.13.0-2 Some players' fog function will crash 
+> Other functions are normal
+> Version 3.13.0c (fix fog) and later moved to https://www.patreon.com/user?u=21728455
 
 > 由於發生某些人販售此軟體，  
 > 此處不會發布新版本,  
