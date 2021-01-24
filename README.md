@@ -4,14 +4,18 @@
 
 ![](https://img.shields.io/badge/Maphack-3.13.0-brightgreen)  
 
-### [Click here to Download](https://github.com/zxc88645/poe-ce/releases)
 
-#### [Click here for support ( Ownedcore )](https://www.ownedcore.com/forums/mmo/path-of-exile/poe-bots-programs/923296-maphack-zoomhack-light-more-3-12-ct.html)  
+> Because someone sells this software,  
+> No new version will be released here,  
+> Update has been moved to https://www.patreon.com/user?u=21728455
+
+> 由於發生某些人販售此軟體，  
+> 此處不會發布新版本,  
+> 更新移動至 https://www.patreon.com/user?u=21728455
 
 ## Overview
 
   This is a collection of quality of life features for Path of Exile. It's designed to be lightweight and easy to use.
-
 
 ## Features
   * Maphack (地圖全開)
