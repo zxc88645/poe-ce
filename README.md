@@ -2,7 +2,7 @@
 # poe-ce: Maphack, zoomhack, Light, and more  
 
 
-![](https://img.shields.io/badge/Maphack-3.13.0-brightgreen)  
+![](https://img.shields.io/badge/Maphack-3.14.0-brightgreen)  
 
 
 
