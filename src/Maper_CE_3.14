@@ -18,6 +18,10 @@
      other1-2: I'm not sure what this is. Maybe you can try change the number to test.
      other3: Maybe it is the intensity of the light reflection.
 
+   - Updated by: jeykelly
+   - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
    - Updated by: zxc88645
    - Version: 3.13.0
    - https://github.com/zxc88645/poe-ce
@@ -175,6 +179,15 @@ PathOfExile_x64.exe+14A6DFA - F3 0F59 25 821BA500   - mulss xmm4,[PathOfExile_x6
 
    - Updated by: jeykelly
    - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
+   - Updated by: zxc88645
+   - Version: 3.13.0
+   - https://github.com/zxc88645/poe-ce
+
+   - Updated by: maper
+   - Version: 3.11.1b
+   - https://github.com/m4p3r/poe-ce        
 */
 
 [ENABLE]
@@ -226,6 +239,10 @@ PathOfExile_x64.exe+47D22D - 0F5B C0               - cvtdq2ps xmm0,xmm0
       <AssemblerScript>/*
    Maphack
 
+   - Updated by: jeykelly
+   - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
    - Updated by: zxc88645
    - Version: 3.13.0
    - https://github.com/zxc88645/poe-ce
@@ -284,6 +301,10 @@ PathOfExile_x64.exe+143EB00 - 66 C7 46 70 0000      - mov word ptr [rsi+70],0000
       <AssemblerScript>/*
    Maphack Reset
 
+   - Updated by: jeykelly
+   - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
    - Updated by: zxc88645
    - Version: 3.13.0
    - https://github.com/zxc88645/poe-ce
@@ -356,6 +377,10 @@ use first line of assembly and find out where mov rdx,FFFFFF blabla is called to
       <AssemblerScript>/*
    Zoomhack
 
+   - Updated by: jeykelly
+   - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
    - Updated by: zxc88645
    - Version: 3.13.0
    - https://github.com/zxc88645/poe-ce
@@ -466,6 +491,10 @@ PathOfExile_x64.exe+6BB7EB - C6 07 01              - mov byte ptr [rdi],01 { 1 }
      NewFarPlane: New culling distance, you can adjust it if you find it
      impacts your performance.
 
+   - Updated by: jeykelly
+   - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
    - Updated by: zxc88645
    - Version: 3.13.0
    - https://github.com/zxc88645/poe-ce
@@ -516,6 +545,10 @@ unregistersymbol(DisableFarPlaneCullingOriginal)
           <AssemblerScript>/*
    Disable Fog Render
 
+   - Updated by: jeykelly
+   - Version: 3.14.0
+   - https://github.com/JeyKelly/poe-ce
+        
    - Updated by: zxc88645
    - Version: 3.13.0
    - https://github.com/zxc88645/poe-ce
