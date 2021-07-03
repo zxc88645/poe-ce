@@ -5,8 +5,9 @@
 ![](https://img.shields.io/badge/Maphack-3.14.0-brightgreen)  
 
 
-
-
+> Free update for 3.14.. will update for following versions here for free as well
+> 
+========
 > Because someone sells this software,  
 > No new version will be released here,  
 > git Version 3.13.0-2 Some players' fog function will crash 
