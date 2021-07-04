@@ -8,15 +8,6 @@
 > Free update for 3.14.. will update for following versions here for free as well
 > 
 ========
-> Because someone sells this software,  
-> No new version will be released here,  
-> git Version 3.13.0-2 Some players' fog function will crash 
-> Other functions are normal  
-> Version 3.13.0c (fix fog) and later moved to https://www.patreon.com/user?u=21728455  
-
-> 由於發生某些人販售此軟體，  
-> 此處不會發布新版本,  
-> 更新移動至 https://www.patreon.com/user?u=21728455
 
 ## Overview
 
@@ -44,15 +35,6 @@
   the anti-cheat from detecting this. Be very cautious about using this on accounts that you care about.  
   **There is always a risk.**  
 
-
-## Donate
-
-  If u can, Let me have a cup of coffee while developing,  
-  
-  BTC: `3KuWGjbQ5BVZBdYzWbKWsAQcGBQiqwF9yh`  
-  PayPal: https://paypal.me/zxc88645
-
-  My appreciation is beyond expression.
 
 ## Requirements
 
@@ -115,7 +97,8 @@
 ## Thanks and Credits
 
   The following people originally wrote some of these features or gave me helpful information over the years.
-
+  
+* zxc88645 
 * zaafar
 * ankorman
 * TehCheat
