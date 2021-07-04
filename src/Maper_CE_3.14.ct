@@ -564,7 +564,7 @@ alloc(newmem,$1000,"PathOfExile_x64.exe")
 alloc(change,$1000,"PathOfExile_x64.exe")
 alloc(OldDisableFogRender, $4)
 
-FULLACCESS(PathOfExile_x64.exe+1A10000,4)
+FULLACCESS(PathOfExile_x64.exe+1AE3FFD,4)
 
 registersymbol(OldDisableFogRender)
 registersymbol(DisableFogRender)
