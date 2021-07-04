@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/Maphack-3.14.0-brightgreen)  
 
 
-> This for will give you a free update for 3.14.. and will updated for the following leagues for free as well
+> This for will give you a free update for 3.14.. and will be updated for the following leagues for free as well
 > 
 ========
 
