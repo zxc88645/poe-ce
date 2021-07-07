@@ -191,7 +191,7 @@ PathOfExile_x64.exe+14A6DFA - F3 0F59 25 821BA500   - mulss xmm4,[PathOfExile_x6
 */
 
 [ENABLE]
-aobscanmodule(AlwaysShowHealthBars, PathOfExile_x64.exe, 7C ?? 44 8B 81 ?? ?? 00 00)
+aobscanmodule(AlwaysShowHealthBars, PathOfExile.exe, 7C ?? 44 8B 81 ?? ?? 00 00)
 registersymbol(AlwaysShowHealthBars)
 AlwaysShowHealthBars:
    db EB
@@ -249,11 +249,11 @@ PathOfExile_x64.exe+47D22D - 0F5B C0               - cvtdq2ps xmm0,xmm0
 */
 
 [ENABLE]
-aobscanmodule(MaphackRevealAob, PathOfExile_x64.exe, 66 C7 46 70 00 00)
-define(MaphackReveal, MaphackRevealAob+05)
+aobscanmodule(MaphackRevealAob, PathOfExile.exe, 66 C7 46 58 00 00)
+define(MaphackReveal, MaphackRevealAob+04)
 registersymbol(MaphackReveal)
 MaphackReveal:
-   db 01
+   db 02
 
 [DISABLE]
 MaphackReveal:
