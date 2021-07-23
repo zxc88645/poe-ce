@@ -6,6 +6,7 @@
 
 
 > This for will give you a free update for 3.14.. and will be updated for the following leagues for free as well
+> 3.15 up for leveling but not everything works yet will fix later
 > 
 ========
 
