@@ -472,7 +472,7 @@ unregistersymbol(DisableFarPlaneCullingOriginal)
         </CheatEntry>
         <CheatEntry>
           <ID>4</ID>
-          <Description>"(optional) Disable Distance Fog (buggy)"</Description>
+          <Description>"(optional) Disable Distance Fog (functional)"</Description>
           <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>/*
@@ -497,7 +497,7 @@ alloc(newmem,$1000,"PathOfExile.exe")
 alloc(change,$1000,"PathOfExile.exe")
 alloc(OldDisableFogRender, $4)
 
-FULLACCESS(PathOfExile.exe+1B7BE8B,622222)
+FULLACCESS(PathOfExile.exe+1B7BE8B,6222222)
 
 registersymbol(OldDisableFogRender)
 registersymbol(DisableFogRender)
